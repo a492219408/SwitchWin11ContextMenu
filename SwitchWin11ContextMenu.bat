@@ -48,8 +48,13 @@ goto :restart_prompt
 
 :restart_prompt
 echo.
-choice /C YN /N /D Y /M "Restart Windows Explorer now? [Y/n]: "
-if errorlevel 2 goto :skip_restart
+set "restart_choice="
+set /p "restart_choice=Restart Windows Explorer now? [Y/n]: "
+if /I "%restart_choice%"=="N" goto :skip_restart
+if not "%restart_choice%"=="" if /I not "%restart_choice%"=="Y" (
+    echo Invalid selection. Press Enter for Yes or type N for No.
+    goto :restart_prompt
+)
 
 echo.
 echo Restarting Windows Explorer...

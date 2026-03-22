@@ -16,7 +16,7 @@ The script uses the current user registry hive (`HKCU`), so it usually **does no
 - Restore the modern Windows 11 menu with:
   - `reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f`
 - Prompts to restart **Windows Explorer** immediately
-- The restart prompt defaults to **Yes**
+- The restart prompt defaults to **Yes** when you press `Enter`
 
 ## Files
 
@@ -31,7 +31,8 @@ The script uses the current user registry hive (`HKCU`), so it usually **does no
    - `2` = Restore modern context menu
    - `3` = Exit
 4. When prompted, choose whether to restart Windows Explorer now.
-   - Default: `Y`
+   - Press `Enter` for the default `Yes`
+   - Type `N` for `No`
 
 ## Notes
 
